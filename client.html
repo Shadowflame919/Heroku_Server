@@ -2,15 +2,25 @@
 	<head>
 		<title>Socket.IO chat</title>
 	</head>
-	<body>
-		<button onclick="socket.emit('move', '0');">W</button>
-		<button onclick="socket.emit('move', '1');">A</button>
-		<button onclick="socket.emit('move', '2');">S</button>
-		<button onclick="socket.emit('move', '3');">D</button>
-		<form action="">
-			<input id="m" autocomplete="off" /><button>Send</button>
-		</form>
-		<ul id="messages"></ul>
+	<body align="center">
+		<h1>Clicking thing with leaderboard</h1>
+		<div id="user-text" hidden>
+			<button onclick="pressButton()" style="color:green; background-color:lightblue; width:200; height:80; font-size:200%;">Gain Point</button>
+			<br><br>
+			<button onclick="saveScore()" style="color:green; background-color:lightblue; width:150; height:50; font-size:150%;">Save Score</button>
+			<br>
+			<p id="text"></p>
+		</div>
+		<div id="form-div">
+			<br>
+			<form action="">
+				<input id="m" autocomplete="off" /><button>Submit Name</button>
+			</form>
+		</div>
+		
+		<p id="leaderboard"></p>
+		
+		
 		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="client.js"></script>

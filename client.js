@@ -25,9 +25,13 @@ function renderText() {
 
 function renderLeaderboard() {
 	textString = "";
-	keyList = Object.keys(user_scores);
-	for (var i=0; i<keyList.length && i<10; i++) {
-		textString += (i+1) + ". " + keyList[i] + ": " + user_scores[keyList[i]] + "<br>";
+	scoresArray = [];
+	for (var name in user_scores) {
+		scoresArray.push([name, user_scores[name]]);
+	}
+	scoresArray.sort(function(a, b) {return b[1] - a[1]});
+	for (var i=0; i<scoresArray.length && i<10; i++) {
+		textString += (i+1) + ". " + scoresArray[i][0] + ": " + scoresArray[i][1] + "<br>";
 	}
 	document.getElementById("leaderboard").innerHTML = textString;
 }

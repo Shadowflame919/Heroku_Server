@@ -24,6 +24,8 @@ io.on('connection', function(socket){
 	});
 });
 
-http.listen(8080, '0.0.0.0', function(){
+var port = Number(process.env.PORT || 8080);
+
+http.listen(port, '0.0.0.0', function(){
 	console.log('listening on *:8080');
 });

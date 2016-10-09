@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Socket.IO chat</title>
+	</head>
+	<body>
+		<button onclick="socket.emit('move', '0');">W</button>
+		<button onclick="socket.emit('move', '1');">A</button>
+		<button onclick="socket.emit('move', '2');">S</button>
+		<button onclick="socket.emit('move', '3');">D</button>
+		<form action="">
+			<input id="m" autocomplete="off" /><button>Send</button>
+		</form>
+		<ul id="messages"></ul>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="client.js"></script>
+	</body>
+</html>
+
